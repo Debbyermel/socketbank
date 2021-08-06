@@ -1,0 +1,82 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--light-color);
+  color: rgb(37, 36, 36);
+  font-family: "Oswald", sans-serif;
+  height: 100vh;
+  padding: 2rem;
+}
+
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+p {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.logo {
+  height: 5.25rem;
+}
+
+.form-login {
+  display: flex;
+}
+
+.form-login input,
+.btn--login {
+  border-radius: 10rem;
+  border: 1px solid var(--white-color);
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  transition: all 0.3s;
+  width: 12rem;
+}
+
+.form-login input:hover {
+  border: 1px solid var(--brand-color);
+}
+
+.btn--login {
+  background-color: var(--brand-color);
+  color: var(--white-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    padding: 5px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  p {
+    font-size: .8rem;
+  }
+}
+
+@media only screen and (device-width: 992px) {
+}
