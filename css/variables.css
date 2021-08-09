@@ -4,5 +4,8 @@
   --white-color: #ffffff;
   --highlighted-color: #c97add;
   --brand-color: #6936d3;
+  --success-color: #a5d85b;
+  --warning-color: #e93846;
   --default-border-radius: 4px;
+  --larger-border-radius: 10px;
 }
