@@ -47,6 +47,17 @@ const userWelcome = document.querySelector('.salute');
 const main = document.querySelector('.main');
 const containerTransactions = document.querySelector('.transactions');
 
+function createUserName(accounts) {
+  accounts.forEach(function(accs) {
+    accs.username = accs.name
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  })
+};
+
+createUserName(accounts);
 
 const displayTransactions = function(transactions) {
   containerTransactions.innerHTML = '';
@@ -65,4 +76,3 @@ const displayTransactions = function(transactions) {
 }
 
 displayTransactions(user1.transactions);
-
