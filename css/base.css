@@ -157,6 +157,20 @@ p {
   cursor: pointer;
 }
 
+.balance {
+  background-color: var(--white-color);
+  border-radius: 5px;
+  border: 1px solid var(--success-color);
+  height: 80px;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+}
+
+.label--balance {
+  font-size: 2rem;
+}
+
 @media only screen and (max-device-width: 480px) {
   body {
     padding: 5px;
@@ -186,5 +200,5 @@ p {
   }
 }
 
-@media only screen and (device-width: 992px) {
-}
+/* @media only screen and (device-width: 992px) {
+} */

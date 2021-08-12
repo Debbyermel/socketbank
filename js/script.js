@@ -46,6 +46,7 @@ let accounts = [user1, user2, user3, user4, user5];
 const userWelcome = document.querySelector('.salute');
 const main = document.querySelector('.main');
 const containerTransactions = document.querySelector('.transactions');
+const labelBalance = document.querySelector('.label--balance');
 
 function createUserName(accounts) {
   accounts.forEach(function(accs) {
@@ -75,4 +76,10 @@ const displayTransactions = function(transactions) {
   });
 }
 
+const calcDisplayBalance = function(transactions) {
+  const balance = transactions.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} CAD`
+}
+
 displayTransactions(user1.transactions);
+calcDisplayBalance(user1.transactions);
