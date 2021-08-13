@@ -38,7 +38,9 @@
 //   }
 // })
 
-
 // currencies.forEach(function(value, key, map) {
 //   console.log(`${key}: ${value}`);
 // })
+
+// const totalDepositsUSD = transactions.filter(mov => mov > 0).map(mov => mov * euroToUsd).reduce((acc, mov) => acc + mov, 0);
+// console.log(totalDepositsUSD);

@@ -41,12 +41,16 @@ const user5 = {
 };
 
 let accounts = [user1, user2, user3, user4, user5];
+const euroToUsd = 1.1;
 
 //DOM ELEMENTS
 const userWelcome = document.querySelector('.salute');
 const main = document.querySelector('.main');
 const containerTransactions = document.querySelector('.transactions');
 const labelBalance = document.querySelector('.label--balance');
+const labelSumIn = document.querySelector('.summary-value-in');
+const labelSumOut = document.querySelector('.summary-value-out');
+const labelInterest = document.querySelector('.summary-interest');
 
 function createUserName(accounts) {
   accounts.forEach(function(accs) {
@@ -57,7 +61,6 @@ function createUserName(accounts) {
       .join('');
   })
 };
-
 createUserName(accounts);
 
 const displayTransactions = function(transactions) {
@@ -75,11 +78,26 @@ const displayTransactions = function(transactions) {
     containerTransactions.insertAdjacentHTML('afterbegin', html);
   });
 }
+displayTransactions(user1.transactions);
 
+//
+const calcDisplaySummary = function(transactions) {
+  const incomes = transactions
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+    labelSumIn.textContent = `${incomes}`
+
+  const out = transactions.filter(mov => mov < 0).reduce(
+    (acc, mov) => acc + mov, 0);
+    labelSumOut.textContent = `${out}`
+};
+calcDisplaySummary(user1.transactions);
+
+
+//
 const calcDisplayBalance = function(transactions) {
   const balance = transactions.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} CAD`
 }
-
-displayTransactions(user1.transactions);
 calcDisplayBalance(user1.transactions);
+
