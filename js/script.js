@@ -85,11 +85,20 @@ const calcDisplaySummary = function(transactions) {
   const incomes = transactions
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-    labelSumIn.textContent = `${incomes}`
+    labelSumIn.textContent = `IN $${incomes}`;
 
   const out = transactions.filter(mov => mov < 0).reduce(
     (acc, mov) => acc + mov, 0);
-    labelSumOut.textContent = `${out}`
+    labelSumOut.textContent = `OUT $${Math.abs(out)}`;
+
+  const interest = transactions
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) /100)
+    .filter(int => {
+      return int >= 1;
+    })
+    .reduce((acc, int) => acc + int, 0);
+    labelInterest.textContent = `Interest ${interest}`;
 };
 calcDisplaySummary(user1.transactions);
 
@@ -100,4 +109,17 @@ const calcDisplayBalance = function(transactions) {
   labelBalance.textContent = `${balance} CAD`
 }
 calcDisplayBalance(user1.transactions);
+
+//chaining
+const totalDepositUSD = function(transactions) {
+  const total = transactions
+    .filter(trans => trans > 0)
+    .map(trans => trans * euroToUsd)
+    .reduce((acc, trans) => acc + trans, 0);
+  console.log(total);
+}
+totalDepositUSD(user1.transactions)
+
+const account = accounts.find(acc => acc.name === 'Leia organa');
+console.log(account);
 

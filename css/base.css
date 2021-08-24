@@ -145,7 +145,7 @@ p {
 }
 
 .summary__value--out {
-  color: #f5465d;
+  color: var(--warning-color);
 }
 
 .btn--sort {
@@ -157,11 +157,12 @@ p {
   cursor: pointer;
 }
 
-.balance {
+.container-amount {
   background-color: var(--white-color);
   border-radius: 5px;
   border: 1px solid var(--success-color);
   height: 80px;
+  margin: 10px 0;
   padding: 10px;
   text-align: center;
   width: 200px;
@@ -169,6 +170,18 @@ p {
 
 .label--balance {
   font-size: 2rem;
+}
+
+ul li {
+  list-style: none;
+}
+
+li.container-amount {
+  height: 40px;
+}
+
+.summary-value-out.container-amount {
+  border: 1px solid var(--warning-color);
 }
 
 /* OPERATIONS */
